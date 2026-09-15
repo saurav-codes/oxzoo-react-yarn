@@ -1,0 +1,36 @@
+# ox deploy manifest: nginx serves dist/ (spa = true); /api and /health proxy to the web process.
+name = "oxzoo-react-yarn"
+branch = "main"
+runtime = "node"
+framework = "generic"
+package_manager = "yarn"
+port = 9106
+environment_file = "/etc/ox/apps/oxzoo-react-yarn.env"
+
+required_packages = ["nodejs"]
+
+[[apt_sources]]
+name = "nodesource"
+url = "https://deb.nodesource.com/node_22.x"
+suite = "nodistro"
+components = ["main"]
+key_url = "https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key"
+
+[frontend]
+dist = "dist"
+api_paths = ["/api", "/health"]
+
+[[processes]]
+name = "web"
+command = "node server/index.js"
+readiness = "http://127.0.0.1:{port}/health"
+
+[deploy]
+install = ["corepack", "yarn", "install", "--frozen-lockfile"]
+build = ["corepack", "yarn", "run", "build"]
+health_url = "http://127.0.0.1:9106/health"
+
+[[domains]]
+name = "react-yarn.oxzoo.sorv.dev"
+tls = false
+spa = true
