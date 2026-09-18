@@ -2,10 +2,8 @@
 name = "oxzoo-react-yarn"
 branch = "main"
 runtime = "node"
-framework = "generic"
 package_manager = "yarn"
 port = 9106
-environment_file = "/etc/ox/projects/oxzoo-react-yarn.env"
 
 required_packages = ["nodejs"]
 
