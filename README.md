@@ -1,6 +1,6 @@
 # oxzoo-react-yarn
 
-ox deploy example: a React 18 SPA (Vite 5) with an Express 4 API deployed onto one Ubuntu VPS by [ox](https://github.com/saurav-codes/vpsctl), driven entirely by the `ox.toml` at the repo root. nginx serves the built SPA with an index.html fallback, and only the `/api` and `/health` prefixes proxy to the Node process, so one env var powers both halves of the demo.
+ox deploy example: a React 18 SPA (Vite 5) with an Express 4 API deployed onto one Ubuntu VPS by [ox](https://github.com/saurav-codes/ox-dev), driven entirely by the `ox.toml` at the repo root. nginx serves the built SPA with an index.html fallback, and only the `/api` and `/health` prefixes proxy to the Node process, so one env var powers both halves of the demo.
 
 ## Stack
 
@@ -27,7 +27,7 @@ Set `GREETING_TAG` in the ox Environment editor for the project **before the fir
 1. In the ox dashboard, create a project with the clone URL:
 
    ```
-   https://github.com/saurav-codes/oxzoo-react-yarn.git
+   git@github.com:saurav-codes/oxzoo-react-yarn.git
    ```
 
 2. In the project's Environment editor, set `GREETING_TAG` (any tag you like, e.g. `prod-1`).
