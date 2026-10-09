@@ -1,6 +1,8 @@
 # oxzoo-react-yarn
 
-ox deploy example: a React 18 SPA (Vite 5) with an Express 4 API deployed onto one Ubuntu VPS by [ox](https://github.com/saurav-codes/ox-dev), driven entirely by the `ox.toml` at the repo root. nginx serves the built SPA with an index.html fallback, and only the `/api` and `/health` prefixes proxy to the Node process, so one env var powers both halves of the demo.
+Deployed with [ox](https://deploywithox.com): deploy a repo to your own server with one command, no Docker. [Docs](https://deploywithox.com/docs) · [Guide for this stack](https://deploywithox.com/docs/guides/react-vite)
+
+ox deploy example: a React 18 SPA (Vite 5) with an Express 4 API deployed onto one Ubuntu VPS by [ox](https://deploywithox.com), driven entirely by the `ox.toml` at the repo root. nginx serves the built SPA with an index.html fallback, and only the `/api` and `/health` prefixes proxy to the Node process, so one env var powers both halves of the demo.
 
 ## Stack
 
